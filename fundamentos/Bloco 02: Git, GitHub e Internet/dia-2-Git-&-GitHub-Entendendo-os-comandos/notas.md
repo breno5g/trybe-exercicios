@@ -16,10 +16,25 @@
   ```bash
   git remove nomeDoArquivo
 
-- git checkout = Faz um monte de coisa mas foi usado para restaurar um arquivo deletado
+- git checkout = Switch branches or restore working tree files
+
+  ```bash
+  git checkout nomeDaBranch
+  ```
 
   ```bash
   git checkout hashDoArquivo~1 nomeDoArquivo
   ```
 
-  
+- git ignore = Ignora os arquivos
+
+  ```bash
+  cat > .gitignore
+  arquivos a ser ignorado
+  ```
+
+- git merge = funde duas branchs
+
+  ```bash
+  git merge nomeDaBranch # funde com a master
+  ```
