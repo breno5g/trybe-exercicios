@@ -5,4 +5,9 @@ O que eu vou aprender na Trybe:
 - Git
 - HTML
 - CSS
+<<<<<<< HEAD:fundamentos/Bloco-02-Git-GitHub-e-Internet/dia-2-Git-&-GitHub-Entendendo-os-comandos/skills.txt
 - Jest
+=======
+- React
+- NodeJs
+>>>>>>> fafc4da7425b1ba6719a456f42d99b6cc6816d5e:fundamentos/Bloco 02: Git, GitHub e Internet/dia-2-Git-&-GitHub-Entendendo-os-comandos/skills.txt
