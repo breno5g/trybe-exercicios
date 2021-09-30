@@ -17,6 +17,7 @@ header {
     justify-content: space-between;
     position: fixed;
     top: 0;
+    box-shadow: 0 2px 3px #11111120;
 }
 
 header img {
@@ -116,9 +117,9 @@ header nav ul li button:hover {
 }
 
 #main-banner a {
-    display: block;
+    display: inline-block;
     height: 50px;
-    width: fit-content;
+    width: 340px;
     padding: 10px 20px;
     background-color: #11a36a;
     margin-top: 10px;
