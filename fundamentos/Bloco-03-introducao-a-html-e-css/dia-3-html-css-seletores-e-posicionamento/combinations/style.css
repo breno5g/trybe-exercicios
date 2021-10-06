@@ -1,0 +1,71 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --trybe-color: lime;
+    --mdn-color: black;
+    --stack-color: orange;
+    --devDocs-color: yellow;
+    --w3-color: lime;
+}
+
+ol li {
+    background-color: yellow;
+}
+
+ol li:nth-child(even) {
+    color: lime;
+}
+ol li:nth-child(odd) {
+    text-transform: uppercase;
+}
+
+h1,
+h3 {
+    color: red;
+}
+
+h1 em,
+h3 em {
+    font-size: 40px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: 800;
+}
+
+ul:first-of-type li:nth-child(-n + 3) {
+    color: blue;
+}
+
+ul:first-of-type li[tech="java"] {
+    background-color: pink;
+}
+
+ul:last-of-type li a:hover {
+    font-weight: bold;
+}
+
+ul:last-of-type li a[ally="stack"]:hover {
+    color: var(--stack-color);
+}
+ul:last-of-type li a[ally="w3"]:hover {
+    color: var(--w3-color);
+}
+ul:last-of-type li a[ally="mdn"]:hover {
+    color: var(--mdn-color);
+}
+ul:last-of-type li a[ally="devDocs"]:hover {
+    color: var(--devDocs-color);
+}
+ul:last-of-type li a[ally="trybe"]:hover {
+    color: var(--trybe-color);
+}
