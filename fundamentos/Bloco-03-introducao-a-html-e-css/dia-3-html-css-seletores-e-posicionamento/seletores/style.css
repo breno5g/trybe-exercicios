@@ -1,0 +1,18 @@
+h1,
+p {
+    text-align: center;
+}
+
+ol li:hover {
+    background-color: #ff634750;
+    cursor: pointer;
+}
+
+ol li:active {
+    font-family: sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
