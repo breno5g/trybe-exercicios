@@ -22,14 +22,20 @@
 
 // Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
 
-const a = 50;
-const b = 30;
-const c = 10;
+// const a = 50;
+// const b = 30;
+// const c = 10;
 
-if (a > b && a > c) {
-  console.log(a);
-} else if (b > c) {
-  console.log(b);
-} else {
-  console.log(c);
-}
+// if (a > b && a > c) {
+//   console.log(a);
+// } else if (b > c) {
+//   console.log(b);
+// } else {
+//   console.log(c);
+// }
+
+// Faça um programa que, dado um valor definido numa constante, retorne "positive" se esse valor for positivo, "negative" se for negativo e "zero" caso contrário.
+
+const n1 = 10;
+
+console.log(n1 >= 0 ? 'positive' : 'negative');
