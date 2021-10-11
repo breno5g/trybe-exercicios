@@ -1,9 +1,10 @@
-const myName = "Breno Santos";
-const birthCity = "São Paulo";
-let birthYear = 2000;
+// Faça cinco programas, um para cada operação aritmética básica. Seu programa deve ter duas constantes, a e b , definidas no começo com os valores que serão operados. Faça programas para:
 
-birthYear = 2030;
-// birthCity = "Diadema";
-// Uma Variavel do tipo "const" é constante, ou seja, não pode ser alterada
+const a = 10;
+const b = 2;
 
-// console.log(birthCity);
+console.log(a + b);
+console.log(a - b);
+console.log(a * b);
+console.log(a / b);
+console.log(a % b);
