@@ -109,10 +109,23 @@
 
 // Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
 
+// const n1 = 10;
+// const n2 = 5;
+// const n3 = 283;
+
+// let teste = n1 % 2 == 0 || n2 % 2 == 0 || n3 % 2 == 0;
+
+// console.log(teste);
+
+// Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for ímpar. Caso contrário, ele retorna false .
+
+// Com ternario
+
 const n1 = 10;
-const n2 = 5;
+const n2 = 6;
 const n3 = 283;
 
-let teste = n1 % 2 == 0 || n2 % 2 == 0 || n3 % 2 == 0;
-
-console.log(teste);
+let teste =
+  n1 % 2 == 1 || n2 % 2 == 1 || n3 % 2 == 1
+    ? console.log(true)
+    : console.log(false);
