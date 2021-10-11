@@ -89,20 +89,30 @@
 
 // Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
 
-const nota = 90;
+// const nota = 90;
 
-if (nota > 100 || nota < 0) {
-  console.log('err');
-} else if (nota >= 90) {
-  console.log('A');
-} else if (nota >= 80) {
-  console.log('B');
-} else if (nota >= 70) {
-  console.log('C');
-} else if (nota >= 60) {
-  console.log('D');
-} else if (nota >= 50) {
-  console.log('E');
-} else {
-  console.log('F');
-}
+// if (nota > 100 || nota < 0) {
+//   console.log('err');
+// } else if (nota >= 90) {
+//   console.log('A');
+// } else if (nota >= 80) {
+//   console.log('B');
+// } else if (nota >= 70) {
+//   console.log('C');
+// } else if (nota >= 60) {
+//   console.log('D');
+// } else if (nota >= 50) {
+//   console.log('E');
+// } else {
+//   console.log('F');
+// }
+
+// Escreva um programa que defina três números em constantes e retorne true se pelo menos uma das três for par. Caso contrário, ele retorna false .
+
+const n1 = 10;
+const n2 = 5;
+const n3 = 283;
+
+let teste = n1 % 2 == 0 || n2 % 2 == 0 || n3 % 2 == 0;
+
+console.log(teste);
