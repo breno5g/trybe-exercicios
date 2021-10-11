@@ -62,9 +62,9 @@
 
 // Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
 
-const peca = 'rainha';
+const peca = 'RAiNha';
 
-switch (peca) {
+switch (peca.toLowerCase()) {
   case 'peão':
     console.log('Uma casa em linha reta ou duas na primeira movimentação');
     break;
