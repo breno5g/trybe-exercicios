@@ -62,27 +62,45 @@
 
 // Escreva um programa que receba o nome de uma peça de xadrez e retorne os movimentos que ela faz.
 
-const peca = 'RAiNha';
+// const peca = 'RAiNha';
 
-switch (peca.toLowerCase()) {
-  case 'peão':
-    console.log('Uma casa em linha reta ou duas na primeira movimentação');
-    break;
-  case 'torre':
-    console.log('Quantidade indefinida de casa no eixo x e y');
-    break;
-  case 'bispo':
-    console.log('Quantidade indefinida de casa no eixo x/y');
-    break;
-  case 'cavalo':
-    console.log('Movimento em L');
-    break;
-  case 'rei':
-    console.log('Um movimento para qualquer direção');
-    break;
-  case 'rainha':
-    console.log('Quantidade indefinida de movimentos para qualquer eixo');
-    break;
-  default:
-    console.log('Por favor insira uma peça valida');
+// switch (peca.toLowerCase()) {
+//   case 'peão':
+//     console.log('Uma casa em linha reta ou duas na primeira movimentação');
+//     break;
+//   case 'torre':
+//     console.log('Quantidade indefinida de casa no eixo x e y');
+//     break;
+//   case 'bispo':
+//     console.log('Quantidade indefinida de casa no eixo x/y');
+//     break;
+//   case 'cavalo':
+//     console.log('Movimento em L');
+//     break;
+//   case 'rei':
+//     console.log('Um movimento para qualquer direção');
+//     break;
+//   case 'rainha':
+//     console.log('Quantidade indefinida de movimentos para qualquer eixo');
+//     break;
+//   default:
+//     console.log('Por favor insira uma peça valida');
+// }
+
+// Escreva um programa que converte uma nota dada em porcentagem (de 0 a 100) em conceitos de A a F. Siga essas regras:
+
+const nota = 90;
+
+if (nota >= 90) {
+  console.log('A');
+} else if (nota >= 80) {
+  console.log('B');
+} else if (nota >= 70) {
+  console.log('C');
+} else if (nota >= 60) {
+  console.log('D');
+} else if (nota >= 50) {
+  console.log('E');
+} else {
+  console.log('F');
 }
