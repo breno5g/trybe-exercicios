@@ -91,7 +91,9 @@
 
 const nota = 90;
 
-if (nota >= 90) {
+if (nota > 100 || nota < 0) {
+  console.log('err');
+} else if (nota >= 90) {
   console.log('A');
 } else if (nota >= 80) {
   console.log('B');
