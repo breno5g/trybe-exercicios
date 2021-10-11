@@ -11,11 +11,25 @@
 
 // Faça um programa que retorne o maior de dois números. Defina no começo do programa duas constantes com os valores que serão comparados.
 
-const a = 10;
-const b = 13;
+// const a = 10;
+// const b = 13;
 
-if (a > b) {
-  console.log(`O maior numero é ${a}`);
+// if (a > b) {
+//   console.log(`O maior numero é ${a}`);
+// } else {
+//   console.log(`O maior numero é ${b}`);
+// }
+
+// Faça um programa que retorne o maior de três números. Defina no começo do programa três constantes com os valores que serão comparados.
+
+const a = 50;
+const b = 30;
+const c = 10;
+
+if (a > b && a > c) {
+  console.log(a);
+} else if (b > c) {
+  console.log(b);
 } else {
-  console.log(`O maior numero é ${b}`);
+  console.log(c);
 }
