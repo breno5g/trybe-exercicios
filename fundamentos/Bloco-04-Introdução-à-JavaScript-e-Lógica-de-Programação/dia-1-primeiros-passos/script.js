@@ -132,18 +132,15 @@
 
 // Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
 
-// function lucro(custo, venda, unidades) {
-//   if (custo >= 0 && venda >= 0) {
-//     let custoTotal = custo + (custo / 100) * 20;
-//     let lucro = venda - custoTotal;
-//     lucro *= unidades;
-//     return lucro;
-//   } else {
-//     console.log('Num zei');
-//   }
-// }
+function lucro(custo, venda, unidades) {
+  if (custo >= 0 && venda >= 0) {
+    return (venda - (custo + (custo / 100) * 20)) * unidades;
+  } else {
+    console.log('Num zei');
+  }
+}
 
-// console.log(lucro(50, 75, 1000));
+console.log(lucro(50, 75, 1000));
 
 // Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
 
