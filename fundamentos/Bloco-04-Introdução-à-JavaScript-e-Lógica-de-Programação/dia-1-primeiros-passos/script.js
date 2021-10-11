@@ -121,11 +121,22 @@
 
 // Com ternario
 
-const n1 = 10;
-const n2 = 6;
-const n3 = 283;
+// const n1 = 10;
+// const n2 = 6;
+// const n3 = 283;
 
-let teste =
-  n1 % 2 == 1 || n2 % 2 == 1 || n3 % 2 == 1
-    ? console.log(true)
-    : console.log(false);
+// let teste =
+//   n1 % 2 == 1 || n2 % 2 == 1 || n3 % 2 == 1
+//     ? console.log(true)
+//     : console.log(false);
+
+// Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
+
+function lucro(custo, venda, unidades) {
+  let custoTotal = custo + (custo / 100) * 20;
+  let lucro = venda - custoTotal;
+  lucro *= unidades;
+  return lucro;
+}
+
+console.log(lucro(50, 75, 1000));
