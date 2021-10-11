@@ -132,48 +132,52 @@
 
 // Escreva um programa que se inicie com dois valores em duas constantes diferentes: o custo de um produto e seu valor de venda. A partir dos valores, calcule quanto de lucro (valor de venda descontado o custo do produto) a empresa terá ao vender mil desses produtos.
 
-// function lucro(custo, venda, unidades) {
-//   let custoTotal = custo + (custo / 100) * 20;
-//   let lucro = venda - custoTotal;
-//   lucro *= unidades;
-//   return lucro;
-// }
+function lucro(custo, venda, unidades) {
+  if (custo >= 0 && venda >= 0) {
+    let custoTotal = custo + (custo / 100) * 20;
+    let lucro = venda - custoTotal;
+    lucro *= unidades;
+    return lucro;
+  } else {
+    console.log('Num zei');
+  }
+}
 
-// console.log(lucro(50, 75, 1000));
+console.log(lucro(50, 75, 1000));
 
 // Uma pessoa que trabalha de carteira assinada no Brasil tem descontados de seu salário bruto o INSS e o IR. Faça um programa que, dado um salário bruto, calcule o líquido a ser recebido.
 
-function taCaro(sal) {
-  let salarioFinal = inss(sal);
-  salarioFinal = ir(salarioFinal);
-  console.log(salarioFinal);
-}
+// function taCaro(sal) {
+//   let salarioFinal = inss(sal);
+//   salarioFinal = ir(salarioFinal);
+//   console.log(salarioFinal);
+// }
 
-function inss(sal) {
-  if (sal <= 1556.94) {
-    sal = sal - (sal / 100) * 8;
-  } else if (sal >= 1556.94 && sal <= 2594.92) {
-    sal = sal - (sal / 100) * 9;
-  } else if (sal >= 2594.92 && sal <= 5189.82) {
-    sal = sal - (sal / 100) * 11;
-  } else {
-    sal = sal - 570.88;
-  }
+// function inss(sal) {
+//   if (sal <= 1556.94) {
+//     sal = sal - (sal / 100) * 8;
+//   } else if (sal >= 1556.94 && sal <= 2594.92) {
+//     sal = sal - (sal / 100) * 9;
+//   } else if (sal >= 2594.92 && sal <= 5189.82) {
+//     sal = sal - (sal / 100) * 11;
+//   } else {
+//     sal = sal - 570.88;
+//   }
 
-  return sal;
-}
+//   return sal;
+// }
 
-function ir(sal) {
-  if (sal >= 1903.99 && sal <= 2826.65) {
-    sal -= (sal / 100) * 7.5 - 142.8;
-  } else if (sal >= 2826.65 && sal <= 3751.05) {
-    sal -= (sal / 100) * 15 - 354.8;
-  } else if (sal >= 3751.05 && sal <= 4664.68) {
-    sal -= (sal / 100) * 22.5 - 636.13;
-  } else {
-    sal -= (sal / 100) * 27.5 - 869.36;
-  }
-  return sal;
-}
+// function ir(sal) {
+//   if (sal >= 1903.99 && sal <= 2826.65) {
+//     sal -= (sal / 100) * 7.5 - 142.8;
+//   } else if (sal >= 2826.65 && sal <= 3751.05) {
+//     sal -= (sal / 100) * 15 - 354.8;
+//   } else if (sal >= 3751.05 && sal <= 4664.68) {
+//     sal -= (sal / 100) * 22.5 - 636.13;
+//   } else {
+//     sal -= (sal / 100) * 27.5 - 869.36;
+//   }
+//   return sal;
+// }
 
-taCaro(3000);
+// taCaro(3000);
