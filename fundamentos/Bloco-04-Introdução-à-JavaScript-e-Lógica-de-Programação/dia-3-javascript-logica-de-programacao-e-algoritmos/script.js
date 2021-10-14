@@ -24,39 +24,39 @@
 
 // 03 - Agora inverta o lado do triângulo. Por exemplo:
 
-// let n = 5;
-// let res = '';
-// let space = n - 1;
-// for (let i = 1; i <= n; i++) {
-//   for (let j = 0; j < n; j++) {
-//     if (j < space) {
-//       res += ' ';
-//     } else {
-//       res += '*';
-//     }
-//   }
-//   console.log(res);
-//   res = '';
-//   space--;
-// }
-
-// 4- Depois, faça uma pirâmide com n asteriscos de base:
-
 let n = 5;
 let res = '';
-let mid = (n + 1) / 2;
-let left = mid - 1;
-let right = mid - 1;
-for (let i = 0; i <= mid; i++) {
-  for (let j = 0; j <= n; j++) {
-    if (j > left && j < right) {
-      res += '*';
-    } else {
+let space = n - 1;
+for (let i = 1; i <= n; i++) {
+  for (let j = 0; j < n; j++) {
+    if (j < space) {
       res += ' ';
+    } else {
+      res += '*';
     }
   }
   console.log(res);
   res = '';
-  left -= 1;
-  right += 1;
+  space--;
 }
+
+// 4- Depois, faça uma pirâmide com n asteriscos de base:
+
+// let n = 5;
+// let res = '';
+// let mid = (n + 1) / 2;
+// let left = mid - 1;
+// let right = mid - 1;
+// for (let i = 0; i <= mid; i++) {
+//   for (let j = 0; j <= n; j++) {
+//     if (j > left && j < right) {
+//       res += '*';
+//     } else {
+//       res += ' ';
+//     }
+//   }
+//   console.log(res);
+//   res = '';
+//   left -= 1;
+//   right += 1;
+// }
