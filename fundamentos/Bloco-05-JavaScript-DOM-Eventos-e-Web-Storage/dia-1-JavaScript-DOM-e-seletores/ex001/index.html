@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="mafagafo">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="mafagafo">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById('paragraph');
+      paragraph.style.color = 'red';
+
+      let title = document.getElementById('page-title');
+      title.textContent = 'Shrek';
+      title.style.color = 'cyan';
+
+      paragraph.style.fontFamily = 'sans-serif';
+
+      document.querySelector('#subtitle').style =
+        'color: purple; font-size: 44px; text-shadow: 2px 2px #111';
+
+      document.getElementsByClassName('mafagafo')[0].style.textShadow =
+        '3px 3px blue';
+
+      document.getElementsByTagName('h4')[0].style.color = 'pink';
+    </script>
+  </body>
+</html>
