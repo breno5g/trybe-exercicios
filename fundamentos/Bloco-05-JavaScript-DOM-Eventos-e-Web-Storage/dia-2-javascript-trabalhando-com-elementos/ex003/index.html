@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      section {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // COLOQUE SEU CÓDIGO AQUI
+      let body = document.body;
+      let h1 = document.createElement('h1');
+      h1.textContent = 'Exercício 5.2 - JavaScript DOM';
+      body.appendChild(h1);
+      let main = document.createElement('main');
+      main.classList.add('main-content');
+      body.appendChild(main);
+      let sect1 = document.createElement('section');
+      sect1.classList.add('center-content');
+      main.appendChild(sect1);
+      let p = document.createElement('p');
+      p.textContent = 'Fafora, tutu, pudim e amor';
+      sect1.appendChild(p);
+      let sect2 = document.createElement('section');
+      sect2.classList.add('left-content');
+      let sect3 = document.createElement('section');
+      sect3.classList.add('right-content');
+      main.appendChild(sect2);
+      main.appendChild(sect3);
+      let img = document.createElement('img');
+      img.setAttribute('src', 'https://picsum.photos/200');
+      img.classList.add('small-image');
+      sect2.appendChild(img);
+      let ul = document.createElement('ul');
+      sect3.appendChild(ul);
+      for (let i = 1; i <= 10; i++) {
+        let li = document.createElement('li');
+        li.textContent = `${i}`;
+        ul.appendChild(li);
+      }
+      for (let i = 0; i < 3; i++) {
+        let h3 = document.createElement('h3');
+        h3.textContent = 'Teste';
+        main.appendChild(h3);
+        h3.classList.add('description');
+      }
+
+      h1.classList.add('title');
+      main.removeChild(document.querySelector('.left-content'));
+      sect3.style = 'margin: auto';
+      sect1.parentElement.style = 'background: green';
+      for (let i = 9; i > 7; i--) {
+        document.querySelector('ul').children[i].remove();
+      }
+    </script>
+  </body>
+</html>
