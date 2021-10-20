@@ -84,10 +84,60 @@ for (let i = 0; i < dezDaysList.length; i++) {
 }
 
 let addBtn = document.querySelector('#btn-add');
-addBtn.addEventListener('click', (e) => {
-  let str = e.target.previousElementSibling;
-  let task = document.createElement('span');
-  task.textContent = str.value;
-  document.querySelector('.my-tasks').appendChild(task);
-  str.value = '';
+addBtn.addEventListener('click', addCompromisso);
+
+function addCompromisso() {
+  let str = document.querySelector('#task-input');
+  let compromisso = document.createElement('li');
+  if (str.value === '') {
+    alert('Por favor insira um valor valido');
+  } else {
+    compromisso.textContent = str.value;
+    document.querySelector('.task-list').appendChild(compromisso);
+    str.value = '';
+  }
+}
+
+document.querySelector('#task-input').addEventListener('focus', () => {
+  document.addEventListener('keyup', (e) => {
+    if (e.key === 'Enter') {
+      addCompromisso();
+    }
+  });
 });
+
+function createTask() {
+  let taskName = 'Task teste';
+  let taskColor = 'blue';
+  let task = document.createElement('span');
+  task.textContent = taskName;
+  let div = document.createElement('div');
+  div.style.backgroundColor = taskColor;
+  div.setAttribute('onclick', `selectTask(this, '${taskColor}')`);
+  document.querySelector('.my-tasks').appendChild(task);
+  document.querySelector('.my-tasks').appendChild(div);
+}
+
+createTask();
+
+let taskSelected = '';
+
+function selectTask(e, color) {
+  if (e.classList.contains('task-selected') == true) {
+    e.classList.remove('task-selected');
+    taskSelected = '';
+  } else {
+    e.classList.add('task-selected');
+    taskSelected = `${color}`;
+  }
+}
+
+for (let i in dezDaysList) {
+  document.querySelectorAll('.days')[i].addEventListener('click', (e) => {
+    if (e.target.style.color === taskSelected) {
+      e.target.style.color = 'rgb(119,119,119)';
+    } else {
+      e.target.style.color = taskSelected;
+    }
+  });
+}
