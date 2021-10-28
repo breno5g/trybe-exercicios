@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <fieldset class="personal-infos">
+        <label for="input-name">Nome completo*</label>
+        <input
+          type="text"
+          name="input-name"
+          id="input-name"
+          maxlength="40"
+          required
+        />
+        <label for="input-email">Email*</label>
+        <input
+          type="text"
+          email="input-email"
+          id="input-email"
+          maxlength="50"
+          required
+        />
+        <label for="input-cpf">CPF*</label>
+        <input
+          type="text"
+          text="input-cpf"
+          id="input-cpf"
+          maxlength="11"
+          required
+        />
+        <label for="input-adress">Endereço*</label>
+        <input
+          type="text"
+          name="input-adress"
+          id="input-adress"
+          maxlength="200"
+          required
+        />
+        <label for="input-state">Estado*</label>
+        <select name="input-state" id="input-state" required>
+          <option value=""></option>
+        </select>
+        <div class="local">
+          <label for="radio-casa">
+            Casa
+            <input type="radio" name="radio-casa" id="radio-casa" />
+          </label>
+          <label for="radio-campo">
+            Apartamento
+            <input type="radio" name="radio-campo" id="radio-campo" />
+          </label>
+        </div>
+      </fieldset>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
