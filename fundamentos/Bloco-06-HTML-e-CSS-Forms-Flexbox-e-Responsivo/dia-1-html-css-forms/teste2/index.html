@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="#" method="post">
+      <h1>Formulario top</h1>
+      <label for="input-name"
+        >Nome completo:
+        <input type="text" name="input-name" id="input-name" />
+      </label>
+      <label for="input-email"
+        >Email:
+        <input type="email" name="input-email" id="input-email" />
+      </label>
+      <label for="input-live">
+        Estado
+        <select name="input-live" id="input-live">
+          <option value="sp">São Paulo</option>
+          <option value="mg">Minas Gerais</option>
+          <option value="ba">Bahia</option>
+        </select>
+      </label>
+      <p>Selecione uma foto:</p>
+      <input type="file" name="input-image" id="input-image" />
+      <p>Comidas favoritas</p>
+      <div class="foodContainer">
+        <label for="radio-batata">
+          <input type="radio" name="input-food" id="radio-batata" />
+          Batata Frita
+        </label>
+        <label for="radio-carne">
+          <input type="radio" name="input-food" id="radio-carne" />
+          Carne
+        </label>
+        <label for="radio-bolo">
+          <input type="radio" name="input-food" id="radio-bolo" />
+          Bolo de cenoura
+        </label>
+        <label for="radio-outro">
+          <input type="radio" name="input-food" id="radio-outro" />
+          Outro
+        </label>
+      </div>
+      <label for="input-password">
+        Senha:
+        <input type="password" name="input-password" id="input-password" />
+      </label>
+      <label for="input-promos">
+        <input type="checkbox" name="input-promos" id="input-promos" />
+        Deseja receber ofertas e promoções?
+      </label>
+      <button type="submit">Cadastrar</button>
+    </form>
+  </body>
+</html>
