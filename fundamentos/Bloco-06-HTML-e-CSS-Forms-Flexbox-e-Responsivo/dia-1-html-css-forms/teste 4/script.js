@@ -52,32 +52,15 @@ document
   .querySelector('button[type="submit"]')
   .addEventListener('click', (e) => {
     e.preventDefault();
+    dateFormater();
     mountCurriculum();
   });
 
-let classes = [
-  'personName',
-  'email',
-  'cpf',
-  'adress',
-  'adress-type',
-  'resume',
-  'charge',
-  'date',
-];
-
 function mountCurriculum() {
   const formData = new FormData(document.querySelector('form'));
-  document.querySelector('.personName').textContent =
-    formData.get('input-name');
-  document.querySelector('.email').textContent = formData.get('input-email');
-  document.querySelector('.cpf').textContent = formData.get('input-cpf');
-  document.querySelector('.adress').textContent = formData.get('input-adress');
-  document.querySelector('.state').textContent = formData.get('input-state');
-  document.querySelector('.adress-type').textContent =
-    formData.get('radio-tipo');
-  document.querySelector('.charge').textContent = formData.get('input-charge');
-  document.querySelector('.resume').textContent =
-    formData.get('charge-description');
-  document.querySelector('.date').textContent = formData.get('input-date');
+  for (let data of formData) {
+    let span = document.createElement('span');
+    span.textContent = data[1];
+    document.querySelector('.curriculum-vitae').appendChild(span);
+  }
 }
