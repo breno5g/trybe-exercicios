@@ -49,15 +49,74 @@
         <div class="local">
           <label for="radio-casa">
             Casa
-            <input type="radio" name="radio-casa" id="radio-casa" />
+            <input
+              type="radio"
+              name="radio-tipo"
+              id="radio-casa"
+              value="casa"
+            />
           </label>
           <label for="radio-campo">
-            Apartamento
-            <input type="radio" name="radio-campo" id="radio-campo" />
+            Campo
+            <input
+              type="radio"
+              name="radio-tipo"
+              id="radio-campo"
+              value="campo"
+            />
           </label>
         </div>
       </fieldset>
+      <fieldset class="jobs">
+        <label for="currriculum-resume">Resumo do currículo</label>
+        <textarea
+          name="currriculum-resume"
+          id="currriculum-resume"
+          cols="30"
+          rows="10"
+          maxlength="1000"
+          required
+        ></textarea>
+        <label for="input-charge">Cargo*</label>
+        <input type="text" name="input-charge" id="input-charge" required />
+        <label for="charge-description">Descrição do cargo</label>
+        <input
+          type="text"
+          name="charge-description"
+          id="charge-description"
+          required
+          maxlength="500"
+        />
+        <label for="initial-date"
+          >Data de início
+          <input
+            type="text"
+            name="initial-date"
+            id="initial-date"
+            required
+            placeholder="dd/mm/aaaa"
+            maxlength="10"
+          />
+        </label>
+      </fieldset>
+      <button type="submit">Enviar</button>
     </form>
+    <div class="curriculum-vitae">
+      <div class="personal">
+        <span class="personName"></span>
+        <p>Email: <span class="email"></span></p>
+        <p>CPF: <span class="cpf"></span></p>
+        <p>Estado: <span class="state"></span></p>
+        <p>Endereço: <span class="adress"></span></p>
+        <p>Tipo: <span class="adress-type"></span></p>
+      </div>
+      <div class="job-infos">
+        <p>Cargo: <span class="charge"></span></p>
+        <span>Resumo do curriculo</span>
+        <p class="resume"></p>
+        <p>Data de início: <span class="date"></span></p>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
