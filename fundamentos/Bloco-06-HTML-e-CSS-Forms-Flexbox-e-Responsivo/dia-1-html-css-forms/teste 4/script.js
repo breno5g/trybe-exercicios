@@ -43,7 +43,7 @@ function dateFormater() {
   if (spaces[1] <= 0 || spaces[1] > 12) {
     alert('Mês inserido invalido');
   }
-  if (Math.sign(Number(spaces[2]))) {
+  if (Math.sign(Number(spaces[2]) === -1)) {
     alert('Ano inserido invalido');
   }
 }
