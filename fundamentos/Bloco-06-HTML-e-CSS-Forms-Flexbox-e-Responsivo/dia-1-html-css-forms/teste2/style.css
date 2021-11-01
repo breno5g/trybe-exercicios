@@ -1,0 +1,30 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #26282c;
+  text-shadow: 1px 1px #ffffff70;
+  border: none;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+form {
+  width: 380px;
+  height: 410px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #b2aaf5;
+  border-radius: 10px;
+  justify-content: space-around;
+  box-shadow: 2px 2px 10px #00000030;
+}
+
+input {
+  padding: 5px;
+}
