@@ -6,4 +6,10 @@ let picker = new Pikaday({
   },
 });
 
-console.log(picker);
+cheet('↑ ↑ ↓ ↓ ← → ← → b a', function () {
+  alert('Voilà!');
+});
+
+cheet('i d d q d', function () {
+  alert('god mode enabled');
+});
