@@ -82,4 +82,22 @@ function verifyPair(obj, key, value) {
   return res;
 }
 
-console.log(verifyPair(lesson1, 'turno', 'manhã'));
+// console.log(verifyPair(lesson1, 'turno', 'manhã'));
+
+// Bonus
+
+function log(obj, teacher) {
+  let keys = Object.keys(obj);
+  let fessor = teacher;
+  let aula = [];
+  let estudante = 0;
+  keys.forEach((e) => {
+    if (obj[e].professor === teacher) {
+      aula.push(obj[e].materia);
+      estudante += obj[e].numeroEstudantes;
+    }
+  });
+  return { professor: fessor, aulas: aula, estudantes: estudante };
+}
+
+console.log(log(allLessons, 'Maria Clara'));
