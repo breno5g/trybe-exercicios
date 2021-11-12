@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -82,3 +85,5 @@ function longestNamedBook() {
 }
 
 console.log(longestNamedBook())
+
+assert.deepStrictEqual(longestNamedBook(), expectedResult)

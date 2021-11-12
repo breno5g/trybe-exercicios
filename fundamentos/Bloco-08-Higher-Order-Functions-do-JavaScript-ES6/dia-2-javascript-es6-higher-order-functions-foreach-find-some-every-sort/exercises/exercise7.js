@@ -35,7 +35,7 @@ const books = [
     genre: 'Ficção Científica',
     author: {
       name: 'Frank Herbert',
-      birthYear: 1921,
+      birthYear: 1920,
     },
     releaseYear: 1965,
   },
@@ -61,6 +61,9 @@ const books = [
   },
 ];
 
+// Importação do assert
+const assert = require("assert")
+
 // 7 - Faça uma função que retorne true , caso nenhum author tenha nascido no mesmo ano, e false , caso contrário.
 
 const expectedResult = false;
@@ -68,7 +71,7 @@ const expectedResult = false;
 function authorUnique() {
   // escreva seu código aqui
   return books.every((book) => {
-    return !books.some((book2) => {
+    return books.some((book2) => {
       (book2.author.birthYear === book.author.birthYear)
       && (book2.author.name !== book.author.name);
     })
@@ -78,3 +81,5 @@ function authorUnique() {
 
 
 console.log(authorUnique())
+
+assert.deepStrictEqual(authorUnique(), expectedResult)

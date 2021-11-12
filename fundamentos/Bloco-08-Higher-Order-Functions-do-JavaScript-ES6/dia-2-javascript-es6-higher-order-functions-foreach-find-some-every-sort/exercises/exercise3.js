@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -80,4 +83,6 @@ function getNamedBook() {
   return books.find((book) => book.name.length === 26)
 }
 
-console.log(JSON.stringify(getNamedBook()) === JSON.stringify(expectedResult))
+// console.log(JSON.stringify(getNamedBook()) === JSON.stringify(expectedResult))
+
+assert.deepStrictEqual(getNamedBook(), expectedResult)

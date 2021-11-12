@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -74,3 +77,5 @@ function averageAge() {
 }
 
 console.log(averageAge())
+
+assert.deepStrictEqual(averageAge(), expectedResult)

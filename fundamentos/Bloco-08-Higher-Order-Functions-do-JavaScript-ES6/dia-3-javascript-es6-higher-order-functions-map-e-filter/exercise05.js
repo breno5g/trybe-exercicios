@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -78,3 +81,5 @@ function fantasyOrScienceFictionAuthors() {
 }
 
 console.log(fantasyOrScienceFictionAuthors())
+
+assert.deepStrictEqual(fantasyOrScienceFictionAuthors(), expectedResult)

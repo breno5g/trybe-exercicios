@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -98,4 +101,6 @@ function nameAndAge() {
   }).sort((a, b) => a.age - b.age)
 }
 
-console.log(nameAndAge())
+// console.log(nameAndAge())
+
+assert.deepEqual(nameAndAge(), expectedResult);

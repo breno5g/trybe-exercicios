@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -73,3 +76,5 @@ function authorWith3DotsOnName() {
 }
 
 console.log(authorWith3DotsOnName())
+
+assert.deepStrictEqual(authorWith3DotsOnName(), expectedResult)

@@ -1,3 +1,6 @@
+// Importação do assert
+const assert = require("assert")
+
 const books = [
   {
     id: 1,
@@ -100,4 +103,6 @@ function fantasyOrScienceFiction() {
   return books.filter((book) => book.genre === "Fantasia" || book.genre === "Ficção Científica")
 }
 
-console.log(fantasyOrScienceFiction())
+// console.log(fantasyOrScienceFiction())
+
+assert.deepStrictEqual(fantasyOrScienceFiction(), expectedResult)
