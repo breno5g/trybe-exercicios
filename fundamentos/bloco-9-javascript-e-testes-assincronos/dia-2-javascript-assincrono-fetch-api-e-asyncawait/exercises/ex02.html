@@ -60,15 +60,25 @@
         return coins;
       }
 
+      async function getBrl() {
+        const URL =
+          'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/usd.min.json';
+        const fetched = await fetch(URL)
+          .then((res) => res.json())
+          .then((res) => res.usd.brl)
+          .catch((err) => console.log(`${err}`));
+        return fetched;
+      }
+
       async function setList() {
         const coins = await getCoins();
+        const real = await getBrl();
         coins
           .filter((coin) => coin.rank <= 10)
           .forEach((coin) => {
+            let price = (Number(coin.priceUsd) * real).toFixed(2);
             let li = document.createElement('li');
-            li.textContent = `${coin.id} ${coin.symbol} - ${Number(
-              coin.priceUsd,
-            ).toFixed(2)}`;
+            li.textContent = `${coin.id} ${coin.symbol} - R$ ${price} `;
             document.querySelector('ul').appendChild(li);
           });
       }
