@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        list-style: none;
+        font-family: sans-serif;
+      }
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      main {
+        background-color: rgb(74, 102, 145);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px #11111130;
+      }
+      h1 {
+        text-align: center;
+        text-shadow: 2px 2px #11111130;
+        color: whitesmoke;
+        font-size: 45px;
+      }
+      ul {
+        width: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 20px auto;
+      }
+      li {
+        background-color: whitesmoke;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 2px #11111130;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Criptomoedas</h1>
+      <ul></ul>
+    </main>
+    <script>
+      async function getCoins() {
+        const URL = 'https://api.coincap.io/v2/assets/';
+        const coins = await fetch(URL)
+          .then((res) => res.json())
+          .then((res) => res.data)
+          .catch((err) => console.log(`${err}`));
+        return coins;
+      }
+
+      async function setList() {
+        const coins = await getCoins();
+        coins
+          .filter((coin) => coin.rank <= 10)
+          .forEach((coin) => {
+            let li = document.createElement('li');
+            li.textContent = `${coin.id} ${coin.symbol} - ${Number(
+              coin.priceUsd,
+            ).toFixed(2)}`;
+            document.querySelector('ul').appendChild(li);
+          });
+      }
+      window.onload = setList();
+    </script>
+  </body>
+</html>
