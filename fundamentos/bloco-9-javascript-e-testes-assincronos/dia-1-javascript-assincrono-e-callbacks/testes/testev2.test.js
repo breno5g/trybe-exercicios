@@ -1,4 +1,4 @@
-// // v1
+// v1
 // test('Não deveria passar!', () => {
 //   setTimeout(() => {
 //     expect(10).toBe(5);
