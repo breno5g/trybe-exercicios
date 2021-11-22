@@ -23,19 +23,19 @@ const conteudos = [
   },
 ];
 
+const teste = conteudos.map((cont) => (
+  <ul key={cont.conteudo}>
+    <li>O conteudo é: {cont.conteudo}</li>
+    <li>O bloco é: {cont.bloco}</li>
+    <li>O status é: {cont.status}</li>
+  </ul>
+));
+
+console.log(teste);
+
 class Content extends React.Component {
   render() {
-    return (
-      <div>
-        {conteudos.map((cont) => (
-          <ul className={cont.conteudo}>
-            <li>O conteudo é: {cont.conteudo}</li>
-            <li>O bloco é: {cont.bloco}</li>
-            <li>O status é: {cont.status}</li>
-          </ul>
-        ))}
-      </div>
-    );
+    return <div>{teste}</div>;
   }
 }
 
