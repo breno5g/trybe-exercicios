@@ -1,0 +1,234 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: beige;
+  display: grid;
+  place-items: center;
+}
+
+:root {
+  --fireBG: #fd735b;
+  --waterBG: #80bfff;
+  --grassBG: #9eec7f;
+  --electricBG: #fad76f;
+  --fairyBG: #f0a8f0;
+  --rockBG: #8b7cec;
+  --ghostBG: #9090df;
+  --dragonBG: #aaaabb;
+  --fightingBG: #cc6f60;
+  --bugBG: #c4d153;
+  --normalBG: #b6b6a8;
+  --poisonBG: #c76cb5;
+  --groundBG: #d3b763;
+  --psychicBG: #ff6ea8;
+  --iceBG: #6cc2fb;
+  --darkBG: #8b6e60;
+  --steelBG: #b6b6c5;
+  --flyingBG: #8899ff;
+}
+
+.cards {
+  max-width: 1120px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.cards .card {
+  width: 175px;
+  height: 250px;
+  padding: 20px 10px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  background-color: tomato;
+}
+
+
+.cards .card.Grass {
+  background-color: var(--grassBG);
+}
+.cards .card.Fire {
+  background-color: var(--fireBG);
+}
+.cards .card.Water {
+  background-color: var(--waterBG);
+}
+.cards .card.Bug {
+  background-color: var(--bugBG);
+}
+.cards .card.Normal {
+  background-color: var(--normalBG);
+}
+.cards .card.Poison {
+  background-color: var(--poisonBG);
+}
+.cards .card.Electric {
+  background-color: var(--electricBG);
+}
+.cards .card.Ground {
+  background-color: var(--groundBG);
+}
+.cards .card.Fairy {
+  background-color: var(--fairyBG);
+}
+.cards .card.Fighting {
+  background-color: var(--fightingBG);
+}
+.cards .card.Psychic {
+  background-color: var(--psychicBG);
+}
+.cards .card.Rock {
+  background-color: var(--rockBG);
+}
+.cards .card.Ghost {
+  background-color: var(--ghostBG);
+}
+.cards .card.Ice {
+  background-color: var(--iceBG);
+}
+.cards .card.Dragon {
+  background-color: var(--dragonBG);
+}
+.cards .card.Dark {
+  background-color: var(--darkBG);
+}
+.cards .card.Steel {
+  background-color: var(--steelBG);
+}
+.cards .card.Flying {
+  background-color: var(--flyingBG);
+}
+
+.cards .card .pokeNumber {
+  padding: 3px 6px;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  border-radius: 20px;
+  background: #ffffff80;
+  font-size: 12px;
+  color: black;
+}
+
+.cards .card .infos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 18px;
+  height: 50px;
+}
+
+.cards .card .infos span {
+  background-color: #ffffff80;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.cards .card figure {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background-color: inherit;
+  box-shadow: inset 0 0 0 50px #ffffff80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards .card figure img {
+  z-index: 100;
+}
+
+.cards .card figure::before {
+  content: "";
+  width: 100%;
+  height: 20px;
+  background-color: inherit;
+  position: absolute;
+  top: 55px;
+  left: 0;
+}
+
+.cards .card figure::after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  background-color: #ffffff80;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.cards .card.Fire figure::after {
+  box-shadow: inset 0 0 0 15px var(--fireBG);
+}
+.cards .card.Grass figure::after {
+  box-shadow: inset 0 0 0 15px var(--grassBG);
+}
+.cards .card.Ice figure::after {
+  box-shadow: inset 0 0 0 15px var(--iceBG);
+}
+.cards .card.Normal figure::after {
+  box-shadow: inset 0 0 0 15px var(--normalBG);
+}
+.cards .card.Ice figure::after {
+  box-shadow: inset 0 0 0 15px var(--iceBG);
+}
+.cards .card.Ghost figure::after {
+  box-shadow: inset 0 0 0 15px var(--ghostBG);
+}
+.cards .card.Water figure::after {
+  box-shadow: inset 0 0 0 15px var(--waterBG);
+}
+.cards .card.Psychic figure::after {
+  box-shadow: inset 0 0 0 15px var(--psychicBG);
+}
+.cards .card.Rock figure::after {
+  box-shadow: inset 0 0 0 15px var(--rockBG);
+}
+.cards .card.Poison figure::after {
+  box-shadow: inset 0 0 0 15px var(--poisonBG);
+}
+.cards .card.Bug figure::after {
+  box-shadow: inset 0 0 0 15px var(--bugBG);
+}
+.cards .card.Electric figure::after {
+  box-shadow: inset 0 0 0 15px var(--electricBG);
+}
+.cards .card.Fighting figure::after {
+  box-shadow: inset 0 0 0 15px var(--fightingBG);
+}
+.cards .card.Fairy figure::after {
+  box-shadow: inset 0 0 0 15px var(--fairyBG);
+}
+.cards .card.Ground figure::after {
+  box-shadow: inset 0 0 0 15px var(--groundBG);
+}
+.cards .card.Dragon figure::after {
+  box-shadow: inset 0 0 0 15px var(--dragonBG);
+}
+.cards .card.Dark figure::after {
+  box-shadow: inset 0 0 0 15px var(--darkBG);
+}
+.cards .card.Steel figure::after {
+  box-shadow: inset 0 0 0 15px var(--steelBG);
+}
+.cards .card.Flying figure::after {
+  box-shadow: inset 0 0 0 15px var(--flyingBG);
+}
