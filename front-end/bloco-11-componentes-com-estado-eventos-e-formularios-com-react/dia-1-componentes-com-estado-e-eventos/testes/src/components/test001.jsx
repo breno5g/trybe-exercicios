@@ -37,7 +37,7 @@ class Alumni extends Person {
 
 class FirstEx extends React.Component {
   handleClick(name, age) {
-    console.log(new Alumni(name, age))
+    console.log(new Alumni(name, age).greeting())
   }
 
   render() {

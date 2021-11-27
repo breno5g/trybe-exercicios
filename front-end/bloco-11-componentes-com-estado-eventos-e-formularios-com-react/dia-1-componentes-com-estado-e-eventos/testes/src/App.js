@@ -1,13 +1,28 @@
+import { useState } from 'react';
 import './App.css';
 
-import FirstEx from './components/ex001';
+import Counter from './components/test003v2';
 
 function App() {
-  return (
-    <div className="App">
-      <FirstEx />
-    </div>
-  );
+  const [show, setShow] = useState(true)
+
+  setTimeout(() => {
+    setShow(false);
+  }, 5000)
+
+  if (show) {
+    return (
+      <>
+        <Counter count={2}/>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <span>No more counter</span>
+      </>
+    );
+  }
 }
 
 export default App;
