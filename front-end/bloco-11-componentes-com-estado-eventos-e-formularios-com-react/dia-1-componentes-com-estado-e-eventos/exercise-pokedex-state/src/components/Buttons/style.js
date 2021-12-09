@@ -9,6 +9,10 @@ export const Button = styled.button`
   background-color: lightblue;
   overflow: hidden;
   color: black;
+
+  &:disabled {
+    filter: grayscale(80%);
+  }
 `;
 
 // update
