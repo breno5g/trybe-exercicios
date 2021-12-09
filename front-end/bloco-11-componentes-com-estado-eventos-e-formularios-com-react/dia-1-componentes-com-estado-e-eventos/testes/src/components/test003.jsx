@@ -2,17 +2,20 @@ import React from 'react';
 
 class Counter extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.state = {count: this.props.count}
-    this.add = this.add.bind(this)
+    this.state = { count: this.props.count };
+    this.add = this.add.bind(this);
   }
 
-  add() { 
-    // this.setState({count: this.state.count + 1}) 
-    this.setState((state) => ({count: this.state.count + 1}), () => {
-      localStorage.setItem("state", JSON.stringify(this.state))
-    }) 
+  add() {
+    // this.setState({count: this.state.count + 1})
+    this.setState(
+      (state) => ({ count: this.state.count + 1 }),
+      () => {
+        localStorage.setItem('state', JSON.stringify(this.state));
+      },
+    );
   }
   // impede a atualização do componente
   // shouldComponentUpdate() {
@@ -21,7 +24,7 @@ class Counter extends React.Component {
 
   // Atualiza o estado do componente após a renderização
   componentDidMount() {
-    this.setState(JSON.parse(localStorage.getItem("state")))
+    this.setState(JSON.parse(localStorage.getItem('state')));
   }
 
   // Executa uma ação quando o componente for removido
@@ -33,7 +36,7 @@ class Counter extends React.Component {
         <h1>Counter: {this.state.count} </h1>
         <button onClick={this.add}>Add</button>
       </>
-    )
+    );
   }
 }
 
