@@ -1,0 +1,31 @@
+.main {
+  h1 {
+    text-align: center;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 10px;
+    gap: 20px;
+    border-radius: 0.25rem;
+    margin: 0 auto;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+      padding: 5px;
+      border-radius: 0.25rem;
+      background-color: #f5f5f5;
+      box-shadow: 2px 2px 5px #11111150;
+    }
+
+    label:nth-child(5) {
+      flex-direction: row;
+      justify-content: flex-start;
+    }
+  }
+}
