@@ -3,6 +3,11 @@ import React, { useEffect, useState } from 'react';
 export function Canvas() {
   const [pixels, setPixels] = useState([]);
   const [ableToDraw, setAbleTodraw] = useState(false);
+  const [color, setColor] = useState('#111111');
+
+  function handleChangeColor(param) {
+    setColor(param);
+  }
 
   function generateCanvas() {
     const pixel = [];
@@ -30,12 +35,16 @@ export function Canvas() {
         className="canvas"
         onMouseOver={(e) => {
           if (ableToDraw) {
-            e.target.style.backgroundColor = '#111';
+            e.target.style.backgroundColor = color;
           }
         }}
       >
         {pixels.map((pixel) => pixel)}
       </div>
+      <input
+        type="text"
+        onChange={({ target }) => handleChangeColor(target.value)}
+      />
       {}
     </>
   );

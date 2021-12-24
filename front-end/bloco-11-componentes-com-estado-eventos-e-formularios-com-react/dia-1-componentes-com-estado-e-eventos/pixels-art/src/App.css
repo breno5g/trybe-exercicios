@@ -9,7 +9,6 @@
   width: fit-content;
   display: grid;
   grid-template: repeat(7, 20px) / repeat(7, 20px);
-  background-color: teal;
 }
 
 .pixel {
