@@ -31,7 +31,7 @@ class Pokedex extends React.Component {
 
   setIndex(filtered) {
     this.setState((state) => ({
-      pokeIndex: (state.pokeIndex + 1) % filtered.length,
+      pokeIndex: (state.pokeIndex + 1) % filtered,
       // Code by Lucas Marçal Coutinho
     }));
   }
@@ -41,12 +41,11 @@ class Pokedex extends React.Component {
     const pokemon = [filtered[this.state.pokeIndex]];
     return (
       <>
-        <div className='pokedex'>
+        <div className="pokedex">
           {pokemon.map((pokemon) => (
             <Pokemon key={pokemon.id} pokemon={pokemon} />
           ))}
         </div>
-        {/* {console.log(pokemon)} */}
         <Buttons
           pokemons={this.props.pokemons}
           setType={this.setType}

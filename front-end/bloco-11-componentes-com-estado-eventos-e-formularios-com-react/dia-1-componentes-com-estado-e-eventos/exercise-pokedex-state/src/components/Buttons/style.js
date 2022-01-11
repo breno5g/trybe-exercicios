@@ -14,5 +14,3 @@ export const Button = styled.button`
     filter: grayscale(80%);
   }
 `;
-
-// update

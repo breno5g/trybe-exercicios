@@ -1,0 +1,19 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.canvas {
+  width: fit-content;
+  display: grid;
+  grid-template: repeat(7, 20px) / repeat(7, 20px);
+}
+
+.pixel {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: 1px solid black;
+}

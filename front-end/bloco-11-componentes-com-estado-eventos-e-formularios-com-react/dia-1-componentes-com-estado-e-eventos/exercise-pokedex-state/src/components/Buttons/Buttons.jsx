@@ -16,14 +16,21 @@ export function Buttons(props) {
   return (
     <>
       {types.map((type) => (
-        <Button key={type} className='type' onClick={() => setType(type)}>
+        <Button
+          key={type}
+          className="type"
+          onClick={() => {
+            setType(type);
+            setIndex(1);
+          }}
+        >
           {type}
         </Button>
       ))}
       <Button onClick={() => setType('all')}>All</Button>
       <Button
         disabled={filtered.length <= 1}
-        onClick={() => setIndex(filtered)}
+        onClick={() => setIndex(filtered.length)}
       >
         Next
       </Button>
