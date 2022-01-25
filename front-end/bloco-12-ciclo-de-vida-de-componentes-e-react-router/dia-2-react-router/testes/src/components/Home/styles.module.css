@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.header a {
+  text-decoration: none;
+}
