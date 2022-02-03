@@ -14,8 +14,7 @@ function App(props) {
           placeholder="insira o texto"
           value={text}
           onChange={(e) => {
-            setText(e.value);
-            console.log(text);
+            setText(e.target.value);
           }}
         />
         <button
