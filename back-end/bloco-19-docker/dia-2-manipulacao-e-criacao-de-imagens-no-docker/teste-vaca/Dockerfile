@@ -1,7 +1,7 @@
 FROM chuanwen/cowsay
 
-ENTRYPOINT [ "usr/games/cowsay" ]
+ENTRYPOINT [ "usr/games/cowsay", "-f", "hellokitty" ]
 
-CMD [ "Vai caralho" ]
+CMD [ "meireles tá puto"]
 
 
