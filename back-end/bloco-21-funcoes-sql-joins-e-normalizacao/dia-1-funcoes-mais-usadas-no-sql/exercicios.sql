@@ -16,3 +16,9 @@ SELECT CONCAT('A grana necessaria para pagar geral é: ', SUM(SALARY)) AS Soma F
 
 --  5. Escreva uma query que exiba quatro informações: o maior salário, o menor salário, a soma de todos os salários e a média dos salários. Todos os valores devem ser formatados para ter apenas duas casas decimais. 
 SELECT ROUND(MAX(SALARY), 2), ROUND(MIN(SALARY), 2), ROUND(SUM(SALARY), 2), ROUND(AVG(SALARY), 2) FROM hr.employees;
+
+--  6. Escreva uma query que exiba a quantidade de pessoas que trabalham como pessoas programadoras ( IT_PROG ). 
+
+SELECT JOB_ID, COUNT(*) FROM hr.employees
+GROUP BY JOB_ID
+HAVING JOB_ID = 'IT_PROG';
