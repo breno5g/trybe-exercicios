@@ -22,3 +22,14 @@ SELECT ROUND(MAX(SALARY), 2), ROUND(MIN(SALARY), 2), ROUND(SUM(SALARY), 2), ROUN
 SELECT JOB_ID, COUNT(*) FROM hr.employees
 GROUP BY JOB_ID
 HAVING JOB_ID = 'IT_PROG';
+
+--  7. Escreva uma query que exiba a quantidade de dinheiro necessária para efetuar o pagamento de cada profissão ( JOB_ID ). 
+
+SELECT JOB_ID, SUM(SALARY) AS pagamento_necessario FROM hr.employees
+GROUP BY JOB_ID;
+
+--  8. Utilizando a query anterior, faça as alterações para que seja exibido somente a quantidade de dinheiro necessária para cobrir a folha de pagamento das pessoas programadoras ( IT_PROG ). 
+
+SELECT JOB_ID, SUM(SALARY) FROM hr.employees
+GROUP BY JOB_ID
+HAVING JOB_ID = 'IT_PROG';
