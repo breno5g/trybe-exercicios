@@ -83,3 +83,6 @@ SELECT UCASE(FIRST_NAME) FROM hr.employees;
 SELECT UCASE(LAST_NAME), DATE(HIRE_DATE) FROM hr.employees
 WHERE YEAR(HIRE_DATE) = 1987 AND MONTH(HIRE_DATE) = 7;
 
+--  18: Escreva uma query que exiba as seguintes informações de cada funcionário: nome , sobrenome , tempo que trabalha na empresa (em dias) . 
+
+SELECT FIRST_NAME, LAST_NAME, DATEDIFF(NOW(), HIRE_DATE) AS days_worked FROM hr.employees ORDER BY days_worked DESC;
