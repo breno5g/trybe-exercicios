@@ -39,3 +39,15 @@ SELECT JOB_ID, AVG(SALARY) AS media FROM hr.employees
 GROUP BY JOB_ID
 HAVING JOB_ID <> 'IT_PROG'
 ORDER BY media DESC;
+
+--  10. Escreva um query que exiba média salarial e o número de funcionários de todos os departamentos com mais de dez funcionários. Dica: agrupe pelo department_id . 
+
+-- SELECT JOB_ID, AVG(SALARY) AS media FROM hr.employees
+-- GROUP BY JOB_ID
+-- HAVING JOB_ID <> 'IT_PROG'
+-- ORDER BY media DESC;
+
+SELECT DEPARTMENT_ID, AVG(SALARY) AS media, COUNT(*) FROM hr.employees
+GROUP BY DEPARTMENT_ID
+HAVING COUNT(*) > 10;
+
