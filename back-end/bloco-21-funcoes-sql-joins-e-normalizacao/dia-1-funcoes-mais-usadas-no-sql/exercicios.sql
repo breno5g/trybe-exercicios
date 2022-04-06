@@ -9,3 +9,8 @@ SELECT MAX(SALARY) - MIN(SALARY) FROM hr.employees;
 SELECT JOB_ID, AVG(salary) AS media FROM hr.employees
 GROUP BY JOB_ID
 ORDER BY media DESC;
+
+--  4. Escreva uma query que exiba a quantidade de dinheiro necessária para realizar o pagamento de todas as pessoas funcionárias. 
+
+SELECT CONCAT('A grana necessaria para pagar geral é: ', SUM(SALARY)) AS Soma FROM hr.employees;
+
