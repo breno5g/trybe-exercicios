@@ -63,3 +63,15 @@ SELECT first_name, COUNT(*) AS 'nomes cadastrados'
 FROM sakila.actor
 GROUP BY first_name
 HAVING 'nomes cadastrados' > 2;
+
+SELECT rating, AVG(length) AS media
+FROM sakila.film
+GROUP BY rating
+HAVING media BETWEEN 115.0 AND 121.50
+ORDER BY media DESC;
+
+SELECT rating, SUM(replacement_cost) AS soma
+FROM sakila.film
+GROUP by rating
+HAVING soma > 3950.50
+ORDER BY soma;
