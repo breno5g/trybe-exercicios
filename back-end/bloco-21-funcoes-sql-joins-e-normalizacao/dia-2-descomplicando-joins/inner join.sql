@@ -29,3 +29,50 @@ ORDER BY c.first_name
 LIMIT 100;
 
 SELECT * FROM sakila.address;
+
+-- Exiba o nome , email , id do endereço , endereço e distrito dos clientes que moram no distrito da California e que contêm "rene" em seus nomes. As informações podem ser encontradas nas tabelas address e customer .
+
+SELECT C.email, C.address_id, A.address, A.district  
+FROM 
+  sakila.customer AS C
+  INNER JOIN 
+    sakila.address AS A
+    ON first_name LIKE '%rene%' AND A.district = 'California';
+
+
+-- Monte uma query que exiba o nome , sobrenome e a média de valor ( amount ) paga aos funcionários no ano de 2006. Use as tabelas payment e staff . Os resultados devem estar agrupados pelo nome e sobrenome do funcionário.
+
+SELECT
+  c.first_name, 
+  COUNT(a.address) AS `quantidade de endereço`
+FROM
+  sakila.customer c
+  INNER JOIN 
+    sakila.address AS a 
+    ON a.address_id = c.address_id
+WHERE c.active = 1
+GROUP BY c.customer_id
+ORDER BY c.first_name, c.last_name;
+
+
+-- Monte uma query que exiba o id do ator , nome , id do filme e título do filme , usando as tabelas actor , film_actor e film . Dica: você precisará fazer mais de um JOIN na mesma query .
+
+SELECT A.actor_id, A.first_name, F.film_id, F.title 
+FROM sakila.actor AS A
+INNER JOIN 
+  sakila.film_actor AS FA ON A.actor_id = FA.actor_id 
+INNER JOIN sakila.film AS F
+ON FA.film_id = F.film_id;
+
+SELECT A.actor_id, A.first_name, F.film_id, F.title 
+FROM sakila.actor AS A, sakila.film_actor AS FA, sakila.film AS F
+WHERE A.actor_id = FA.actor_id AND FA.film_id = F.film_id;
+
+
+SELECT
+    CONCAT(Employee.FIRST_NAME, " ", Employee.LAST_NAME) AS "Nome da Pessoa Colaboradora",
+    CONCAT(Manager.FIRST_NAME, " ", Manager.LAST_NAME) AS "Nome Gerente"
+FROM
+    hr.employees AS Employee
+INNER JOIN
+    hr.employees AS Manager ON Employee.MANAGER_ID = Manager.EMPLOYEE_ID;
