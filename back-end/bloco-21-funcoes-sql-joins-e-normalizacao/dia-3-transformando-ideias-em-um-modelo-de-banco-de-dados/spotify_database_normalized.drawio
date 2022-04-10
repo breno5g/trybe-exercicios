@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2022-04-10T12:55:36.884Z" agent="5.0 (X11)" etag="a0eVl--dZPAN_vePEvID" version="17.4.2" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-10T12:57:05.391Z" agent="5.0 (X11)" etag="p6gnJgoXbBsNysUsi6K5" version="17.4.2" type="github">
   <diagram id="TBQ7aUDyecNSGk7ifxOf" name="Page-1">
     <mxGraphModel dx="868" dy="449" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -107,7 +107,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="Ob_YggxUKcj3K266VAnM-31" value="artists" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="420" y="190" width="140" height="90" as="geometry" />
+          <mxGeometry x="420" y="180" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="Ob_YggxUKcj3K266VAnM-32" value="artist_id" style="text;strokeColor=#d6b656;fillColor=#fff2cc;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;" parent="Ob_YggxUKcj3K266VAnM-31" vertex="1">
           <mxGeometry y="30" width="140" height="30" as="geometry" />
