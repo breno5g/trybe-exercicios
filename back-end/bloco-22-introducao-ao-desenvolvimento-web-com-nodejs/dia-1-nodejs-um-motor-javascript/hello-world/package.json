@@ -1,0 +1,20 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "imc": "node imc",
+    "velocidade": "node vel.js",
+    "sorteio": "node sort.js",
+    "scripts": "node scripts.js",
+    "fibonacci": "node fibonacci.js"
+  },
+  "author": "Breno Santos",
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
