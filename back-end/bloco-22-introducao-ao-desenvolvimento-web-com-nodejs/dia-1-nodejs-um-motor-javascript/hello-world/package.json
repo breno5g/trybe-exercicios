@@ -8,7 +8,8 @@
     "start": "node index.js",
     "imc": "node imc",
     "velocidade": "node vel.js",
-    "sorteio": "node sort.js"
+    "sorteio": "node sort.js",
+    "scripts": "node scripts.js"
   },
   "author": "Breno Santos",
   "license": "ISC",
