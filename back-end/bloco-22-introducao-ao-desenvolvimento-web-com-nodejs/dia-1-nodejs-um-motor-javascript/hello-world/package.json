@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "imc": "node imc"
+    "imc": "node imc",
+    "velocidade": "node vel.js",
+    "sorteio": "node sort.js"
   },
   "author": "Breno Santos",
   "license": "ISC",
