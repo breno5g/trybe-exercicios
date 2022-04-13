@@ -4,9 +4,13 @@ const scripts = [
   { name: 'imc', path: './imc.js' },
   { name: 'vel', path: './vel.js' },
   { name: 'sort', path: './sort.js' },
+  { name: 'fibonacci', path: './fibonacci.js' },
 ];
 
 const message = scripts.map((scr, index) => `N-${index + 1} - ${scr.name}`);
+
+console.log('=-=-=-=-=-=-= Scripts =-=-=-=-=-=-=');
+console.log('');
 
 message.unshift('Escolha um numero para rodar os script: ');
 

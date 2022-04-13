@@ -25,4 +25,7 @@ const start = () => {
   fibonacci(n - 2);
 };
 
+console.log('=-=-=-=-=-=-= Calculadora de Fibonacci =-=-=-=-=-=-=');
+console.log('');
+
 start();

@@ -18,4 +18,7 @@ const start = () => {
   }
 };
 
+console.log('=-=-=-=-=-=-= Sorteio bonito =-=-=-=-=-=-=');
+console.log('');
+
 start();

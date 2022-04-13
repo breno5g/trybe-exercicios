@@ -9,7 +9,8 @@
     "imc": "node imc",
     "velocidade": "node vel.js",
     "sorteio": "node sort.js",
-    "scripts": "node scripts.js"
+    "scripts": "node scripts.js",
+    "fibonacci": "node fibonacci.js"
   },
   "author": "Breno Santos",
   "license": "ISC",

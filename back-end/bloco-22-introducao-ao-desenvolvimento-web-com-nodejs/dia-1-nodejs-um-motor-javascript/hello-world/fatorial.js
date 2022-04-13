@@ -4,7 +4,7 @@ const fatorial = () => {
   const initial = questionInt('Insira o valor para ser calculado: ');
 
   if (initial % 1 !== 0 || initial < 0) {
-    console.log("O numero inserido é invalido");
+    console.log('O numero inserido é invalido');
     return false;
   }
   let res = initial;
@@ -15,5 +15,8 @@ const fatorial = () => {
 
   console.log(`A fatorial de ${initial} é ${res}.`);
 };
+
+console.log('=-=-=-=-=-=-= Calculadora de Fatorial =-=-=-=-=-=-=');
+console.log('');
 
 fatorial();

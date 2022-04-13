@@ -1,5 +1,8 @@
 const readline = require('readline-sync');
 
+console.log('=-=-=-=-=-=-= Calculadora de IMC =-=-=-=-=-=-=');
+console.log('');
+
 const weight = readline.questionFloat('Qual é o seu peso (KG)? ');
 const height = readline.questionFloat('Qual é sua altura (Metros)? ');
 

@@ -1,6 +1,13 @@
-const readline = require("readline-sync");
+const readline = require('readline-sync');
 
-const dist = readline.questionInt("Qual a distancia? ");
-const temp = readline.questionInt("Qual o tempo? ");
+console.log('=-=-=-=-=-=-= Calculadora de velocidade =-=-=-=-=-=-=');
+console.log('');
 
-console.log(`A velocidade é de ${(dist / temp).toFixed(2)} ${dist / temp > 1 ? "metros" : "metro"} por segundo`);
+const dist = readline.questionInt('Qual a distancia? ');
+const temp = readline.questionInt('Qual o tempo? ');
+
+console.log(
+  `A velocidade é de ${(dist / temp).toFixed(2)} ${
+    dist / temp > 1 ? 'metros' : 'metro'
+  } por segundo`
+);
