@@ -25,5 +25,5 @@ const selectedOption = readline.questionInt(
 
 // Consegui rodar utilizando o require mas não achei conteudo sobre isso. *lembrar de revisar*
 // Acho que por dar um require num arquivo com execução "automatica" e não atribuir a nenhuma variavel, ele executa diretamente
-
+// Okay. de fato estou certo. Muchas gracias Pedro Gordo
 require(scripts[selectedOption - 1].path);
