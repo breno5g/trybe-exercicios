@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "console.image": "^1.0.2",
+    "readline-sync": "^1.4.10",
+    "terminal-image": "^2.0.0"
+  }
+}
