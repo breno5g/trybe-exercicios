@@ -62,25 +62,54 @@ const fs = require('fs').promises;
 
 // createNewJson();
 
-const changeSimpson = async () => {
-  const simpson = await fs
-    .readFile('./simpsonFamily.json', 'utf-8')
-    .then((res) => {
-      const arr = JSON.parse(res);
-      return arr;
-    });
+// const addChar = async () => {
+//   const simpson = await fs
+//     .readFile('./simpsonFamily.json', 'utf-8')
+//     .then((res) => {
+//       const arr = JSON.parse(res);
+//       return arr;
+//     });
 
-  const newJson = simpson.map((taFaltandoCriatividade) => {
-    if (taFaltandoCriatividade.id === 'Nelson Muntz') {
-      return {
-        ...taFaltandoCriatividade,
-        name: 'Maggie Simpson',
-      };
-    }
-    return taFaltandoCriatividade;
-  });
+//   simpson.push({ id: '5', name: 'Nelson Muntz' });
+//   fs.writeFile('./simpsonFamily.json', JSON.stringify(simpson));
+// };
 
-  fs.writeFile('./simpsonFamily.json', JSON.stringify(newJson));
-};
+// addChar();
 
-changeSimpson();
+// const changeSimpson = async () => {
+//   const simpson = await fs
+//     .readFile('./simpsonFamily.json', 'utf-8')
+//     .then((res) => {
+//       const arr = JSON.parse(res);
+//       return arr;
+//     });
+
+//   const newJson = simpson.map((taFaltandoCriatividade) => {
+//     if (taFaltandoCriatividade.name === 'Nelson Muntz') {
+//       return {
+//         ...taFaltandoCriatividade,
+//         name: 'Maggie Simpson',
+//       };
+//     }
+//     return taFaltandoCriatividade;
+//   });
+//   fs.writeFile('./simpsonFamily.json', JSON.stringify(newJson));
+// };
+
+// changeSimpson();
+
+Promise.all([
+  fs.readFile('./simpsons.json', 'utf-8'),
+  fs.readFile('./simpsonFamily.json', 'utf-8'),
+]).then(([arc1, arc2]) => {
+  const archive1 = JSON.parse(arc1);
+  const archive2 = JSON.parse(arc2);
+
+  const res = [
+    { name: 'all', file: [...archive1] },
+    { name: 'simpsons family', file: [...archive2] },
+  ];
+
+  res.unshift('Finalmente estou usando Promise.all !!! ');
+  fs.writeFile('./fileAll.json', JSON.stringify(res));
+});
