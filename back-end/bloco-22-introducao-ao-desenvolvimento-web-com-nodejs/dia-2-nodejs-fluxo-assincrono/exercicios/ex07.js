@@ -25,7 +25,14 @@ const init = async () => {
     .readFile(`./${archives[select - 1]}`, 'utf-8')
     .then((res) => res.toString());
 
-  console.log(text.replace(new RegExp(word, 'g'), substitute));
+  const output = text.replace(new RegExp(word, 'g'), substitute);
+  console.log(output);
+
+  const destino = readline.question(
+    '\nInsira o nome do arquivo de destino (com extensão): '
+  );
+
+  fs.writeFile(`./${destino}`, output);
 };
 // (function teste(param) {
 //   console.log(param);
