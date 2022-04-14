@@ -6,5 +6,6 @@ fs.readFile('./arquivo.txt', (err, content) => {
     return;
   }
   // console.log(content) //Pesquisar o que quer dizer o resultado disso (me parecem posições na mememoria)
+  // Update - aquilo é um raw buffer / uma referencia para a memoria bruta alocada fora do node
   console.log(`Arquivo lido com sucesso. Conteúdo: ${content.toString('utf8')}`);
 });
