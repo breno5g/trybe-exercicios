@@ -1,0 +1,15 @@
+const axios = require('axios');
+
+const fetch = async () => {
+  const promises = [];
+  for (let id = 1; id < 152; id++) {
+    const res = axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    promises.push(res);
+  }
+
+  const resolvedPromises = await Promise.all(promises);
+
+  resolvedPromises.forEach((res) => console.log(res.data.name));
+};
+
+fetch();

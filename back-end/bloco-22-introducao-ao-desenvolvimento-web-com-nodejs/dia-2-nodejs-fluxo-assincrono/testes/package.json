@@ -1,0 +1,10 @@
+{
+  "name": "testes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "breno santos",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1"
+  }
+}
