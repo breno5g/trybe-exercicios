@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { teamsValidate } = require('../helpers/index');
-const { readFile, writeFile } = require('../utils/readWriteFileInJson');
+const { readFile, writeFile } = require('../utils/readWriteFile');
 
 router.get('/teams', (req, res) => {
   const teams = JSON.parse(readFile('teams.json'));
