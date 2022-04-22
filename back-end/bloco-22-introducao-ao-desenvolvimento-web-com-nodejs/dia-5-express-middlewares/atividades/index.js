@@ -1,39 +1,29 @@
 const express = require('express');
-const authorizationMiddlewere = require('./middleweres/authorizationMiddlwere');
-const cors = require('cors');
-const api = require('./services/API');
-const { generateToken } = require('./helpers');
-const emailAndPasswordValidate = require('./middleweres/emailAndPasswordValidate');
+const router = require('./Routes');
+const error = require('./middlewares/errorMiddleware');
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 const PORT = 3000;
 
-// Atividade 2
+// Atividade 01
+app.use(router.userRouter);
 
-app.get('/btc/price', authorizationMiddlewere, async (req, res) => {
-  const btcPrice = await api();
-  console.log(btcPrice);
-  return res.status(200).json(btcPrice);
-});
+// Atividade 02
+app.use(router.btcRouter);
 
-// Atividade 1
+// Atividade 03
+app.use(router.postsRouter);
 
-app.post('/user/register', emailAndPasswordValidate, (req, res) => {
-  const { username } = req.body;
+// Atividade 04
+app.use(router.teamsRouter);
 
-  const isUsernameValid = username.length >= 3;
-
-  if (isUsernameValid) {
-    return res.status(201).json({ message: 'Created' });
-  }
-
-  return res.status(400).json({ message: 'Invalid data' });
-});
-
-app.post('/user/login', emailAndPasswordValidate, (req, res) => {
-  return res.status(200).json({ token: generateToken() });
-});
+// Pega qualquer rota que não tenha sido criada e dispara um erro (deve sempre ficar por ultimo)
+app.use('*', (_req, _res, next) =>
+  // Passa um objecto com o status e a mensgem do erro
+  next({ status: 404, message: 'Opsss, route not found!' })
+);
+// Usa o middleware de erro
+app.use(error);
 
 app.listen(PORT, () => console.log(`Rodando na porta ${PORT}`));
