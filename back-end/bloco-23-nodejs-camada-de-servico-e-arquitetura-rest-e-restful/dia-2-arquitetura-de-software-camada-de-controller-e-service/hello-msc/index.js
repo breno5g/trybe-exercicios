@@ -1,7 +1,6 @@
-// index.js
-
 const express = require('express');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const Author = require('./controllers/Authors');
 
