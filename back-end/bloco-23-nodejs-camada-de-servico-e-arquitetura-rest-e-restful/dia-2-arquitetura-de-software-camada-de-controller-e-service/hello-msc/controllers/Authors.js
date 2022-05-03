@@ -2,7 +2,6 @@ const Author = require('../services/Authors');
 
 const getAll = async (_req, res) => {
   const authors = await Author.getAll();
-
   res.status(200).json(authors);
 };
 

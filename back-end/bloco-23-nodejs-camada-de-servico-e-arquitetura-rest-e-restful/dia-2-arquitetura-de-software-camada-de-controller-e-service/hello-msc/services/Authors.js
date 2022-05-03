@@ -16,6 +16,16 @@ const getNewAuthor = (authorData) => {
   };
 };
 
+const serialize = (authorData) =>
+  authorData.map((item) =>
+    getNewAuthor({
+      id: item.id,
+      firstName: item.first_name,
+      middleName: item.middle_name,
+      lastName: item.last_name,
+    })
+  );
+
 const isValid = (firstName, middleName, lastName) => {
   if (!firstName || typeof firstName !== 'string') return false;
   if (!lastName || typeof lastName !== 'string') return false;
@@ -26,14 +36,13 @@ const isValid = (firstName, middleName, lastName) => {
 
 const getAll = async () => {
   const authors = await Author.getAll();
-
-  return authors.map(getNewAuthor);
+  return serialize(authors);
 };
 
 const findById = async (id) => {
   const author = await Author.findById(id);
-
-  return getNewAuthor(author);
+  if (!author) return null;
+  return serialize(author);
 };
 
 const createAuthor = async (firstName, middleName = null, lastName) => {
