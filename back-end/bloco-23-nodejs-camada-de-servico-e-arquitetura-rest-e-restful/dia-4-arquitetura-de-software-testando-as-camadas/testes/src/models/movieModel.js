@@ -8,6 +8,9 @@ const create = async ({ title, directedBy, releaseYear }) => {
 
   return {
     id: result.insertId,
+    title,
+    directedBy,
+    releaseYear,
   };
 };
 

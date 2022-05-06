@@ -11,13 +11,11 @@ const isValid = (title, directedBy, releaseYear) => {
 const create = async ({ title, directedBy, releaseYear }) => {
   const isMovieValid = isValid(title, directedBy, releaseYear);
 
-  if (!isMovieValid) return false;
+  if (!isMovieValid) throw { message: 'miou' };
 
-  const { id } = await MoviesModel.create({ title, directedBy, releaseYear });
+  const movie = await MoviesModel.create({ title, directedBy, releaseYear });
 
-  return {
-    id,
-  };
+  return movie;
 };
 
 module.exports = {
