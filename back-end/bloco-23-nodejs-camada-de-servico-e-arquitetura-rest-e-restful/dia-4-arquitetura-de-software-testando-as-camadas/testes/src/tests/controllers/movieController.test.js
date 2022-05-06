@@ -14,7 +14,7 @@ describe('Ao chamar o controller de create', () => {
       req.body = {};
 
       res.status = sinon.stub().returns(res);
-      res.send = sinon.stub().returns();
+      res.json = sinon.stub().returns();
     });
 
     it('é chamado o status com o código 400', async () => {
@@ -26,7 +26,7 @@ describe('Ao chamar o controller de create', () => {
     it('é chamado o send com a mensagem "Dados inválidos"', async () => {
       await MoviesController.create(req, res);
 
-      expect(res.send.calledWith('Dados inválidos')).to.be.equal(true);
+      expect(res.json.calledWith({ message: 'miou' })).to.be.equal(true);
     });
   });
 
@@ -43,8 +43,11 @@ describe('Ao chamar o controller de create', () => {
 
       res.status = sinon.stub().returns(res);
 
-      sinon.stub(MoviesService, 'create').resolves(true);
-      res.send = sinon.stub().returns();
+      sinon.stub(MoviesService, 'create').resolves({
+        id: 1,
+        ...req.body,
+      });
+      res.json = sinon.stub().returns();
     });
 
     after(() => {
@@ -60,9 +63,14 @@ describe('Ao chamar o controller de create', () => {
     it('é chamado o send com a mensagem "Filme criado com sucesso!"', async () => {
       await MoviesController.create(req, res);
 
-      expect(res.send.calledWith('Filme criado com sucesso!')).to.be.equal(
-        true
-      );
+      expect(
+        res.json.calledWith({
+          id: 1,
+          title: 'BeetleJuice',
+          directedBy: 'Tim Burton',
+          releaseYear: 1988,
+        })
+      ).to.be.equal(true);
     });
   });
 });
