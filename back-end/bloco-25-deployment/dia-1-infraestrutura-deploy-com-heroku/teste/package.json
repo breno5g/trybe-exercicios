@@ -6,7 +6,11 @@
   "dependencies": {
     "express": "^4.18.1"
   },
+  "engines": {
+    "node": "16",
+    "npm": "8.5"
+  },
   "scripts": {
-   "start": "node index.js"
- }
- }
+    "start": "node index.js"
+  }
+}
