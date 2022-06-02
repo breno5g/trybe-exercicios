@@ -7,5 +7,5 @@ app.get('/', (_req, res) => {
 });
 
 app.listen(3000, (_req, _res) => {
-  console.log('Server on');
+  console.log('Server on and hosting');
 });
