@@ -1,0 +1,14 @@
+{
+  "name": "exercicio",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "readline-sync": "^1.4.10",
+    "typescript": "^4.7.3"
+  },
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.4"
+  }
+}
