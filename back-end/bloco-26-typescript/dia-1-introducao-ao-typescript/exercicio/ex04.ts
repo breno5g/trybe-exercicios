@@ -2,7 +2,14 @@ import months from './ex02';
 import seasons from './ex03';
 import readline from 'readline-sync';
 
-const north = {
+interface NorthAndSouthType {
+  Outono: string[];
+  Inverno: string[];
+  Verao: string[];
+  Primavera: string[];
+}
+
+const north: NorthAndSouthType = {
   [seasons.autumn]: [
     months.september,
     months.october,
@@ -19,7 +26,7 @@ const north = {
   [seasons.summer]: [months.june, months.july, months.august, months.september],
 };
 
-const south = {
+const south: NorthAndSouthType = {
   [seasons.autumn]: [months.march, months.april, months.may, months.june],
   [seasons.winter]: [months.june, months.july, months.august, months.september],
   [seasons.spring]: [
@@ -36,7 +43,12 @@ const south = {
   ],
 };
 
-const hemispheres: any = {
+type HemispheresType = {
+  [Norte: string]: NorthAndSouthType;
+  Sul: NorthAndSouthType;
+};
+
+const hemispheres: HemispheresType = {
   Norte: north,
   Sul: south,
 };
@@ -54,8 +66,12 @@ const selectedHemisphere = readline.keyInSelect(
 const hemispheresBeleuza = Object.keys(hemispheres)[selectedHemisphere];
 const monthsBelezuza = Object.values(months)[selectedMonth];
 
-const actualSeason = Object.entries(hemispheres[hemispheresBeleuza])
-  .map((value: any) => {
+const entries: [string, string[]][] = Object.entries(
+  hemispheres[hemispheresBeleuza]
+);
+
+const actualSeason = entries
+  .map((value) => {
     if (value[1].includes(monthsBelezuza)) return value[0];
   })
   .filter((value) => value);
