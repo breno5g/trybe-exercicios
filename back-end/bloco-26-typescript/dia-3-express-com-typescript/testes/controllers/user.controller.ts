@@ -8,8 +8,8 @@ class UserController {
     this.service = new UserService();
     // É necessario o bind ao inicializar pois no route estou usando uma função comum
     // Graças a isso ela enfia o this no bumbum
-    this.getAll = this.getAll.bind(this);
-    this.getById = this.getById.bind(this);
+    // this.getAll = this.getAll.bind(this);
+    // this.getById = this.getById.bind(this);
   }
 
   async getAll(req: Request, res: Response, next: NextFunction) {
