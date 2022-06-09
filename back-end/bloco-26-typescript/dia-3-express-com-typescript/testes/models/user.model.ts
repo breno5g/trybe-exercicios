@@ -16,6 +16,10 @@ export class UserModel extends Connection {
     const [data] = await this.connection.execute(query);
     return this.parse(data);
   }
-}
 
-// const teste = new User()
+  public async getById(id: string): Promise<UserInterface> {
+    const query = 'SELECT * FROM Users WHERE id=?';
+    const [data] = await this.connection.execute(query, [id]);
+    return this.parse(data)[0];
+  }
+}

@@ -9,7 +9,7 @@ class ErrorMiddleware {
     res: Response,
     next: NextFunction
   ) {
-    console.log(err.name, ':', err.message);
+    console.log('Error:', err.message);
 
     if (err.status) {
       return res.status(err.status).json({ message: err.message });
