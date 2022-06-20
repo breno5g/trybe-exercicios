@@ -36,7 +36,7 @@ class Data {
 
   public isLeapYear() {
     const year = this._year
-    return (year % 400 == 0) || (year % 4==0 && year %100!= 0)
+    return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0)
   }
 
   public compare(date: string) {
