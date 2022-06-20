@@ -1,3 +1,4 @@
+import { NewError } from '../helper';
 import { UserInterface } from '../interfaces';
 import { UserModel } from '../models/user.model';
 
@@ -15,7 +16,7 @@ export class UserService {
   public async getById(id: string) {
     const user = await this.model.getById(id);
     if (!user) {
-      throw { status: 404, message: 'User not found' };
+      new NewError(404, "User not found")
     }
     return user;
   }
