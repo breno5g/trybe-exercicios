@@ -238,3 +238,19 @@
 // be valid.
 
 // Tive um **** de um mind blowing
+
+// class maycon {
+//   constructor() {
+
+//   }
+
+//   metodo() {
+//     return Math.random();
+//   }
+// }
+
+// const teste1 = new maycon();
+// const teste2 = new maycon();
+
+// console.log(teste1.metodo());
+// console.log(teste2.metodo());
