@@ -11,4 +11,10 @@ const frameMockWithId: IFrame & { _id:string } = {
   color: 'Daquele naipe'
 };
 
-export { frameMock, frameMockWithId };
+const frameMocksArray: IFrame[] = [
+  {...frameMock},
+  {...frameMock},
+  {...frameMock},
+]
+
+export { frameMock, frameMockWithId, frameMocksArray };
