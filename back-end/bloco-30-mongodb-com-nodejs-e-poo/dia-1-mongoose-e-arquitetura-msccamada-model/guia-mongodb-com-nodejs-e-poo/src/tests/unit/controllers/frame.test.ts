@@ -1,10 +1,11 @@
 import { expect } from 'chai';
 import * as sinon from 'sinon';
 import { NextFunction, Request, Response } from 'express';
-import { frameMock, frameMockWithId } from '../../mocks/Frame.mock';
+import { frameMock, frameMocksArray, frameMockWithId } from '../../mocks/Frame.mock';
 import FrameController from '../../../controllers/Frame.controller';
 import FrameService from '../../../services/Frame.service';
 import FrameModel from '../../../models/Frame.model';
+import { ErrorTypes } from '../../../errors/catalog';
 
 
 describe('Frame Controller', () => {
@@ -19,6 +20,7 @@ describe('Frame Controller', () => {
   before(() => {
     sinon.stub(frameService, 'create').resolves(frameMock);
     sinon.stub(frameService, 'readOne').resolves(frameMock);
+    sinon.stub(frameService, 'read').resolves(frameMocksArray);
 
     res.status = sinon.stub().returns(res);
     res.json = sinon.stub().returns(res);
@@ -50,4 +52,12 @@ describe('Frame Controller', () => {
       expect((res.json as sinon.SinonStub).calledWith(frameMock)).to.be.true;
     });
   });
+
+  describe('Read all Frames', () => {
+		it('Success', async () => {
+			const frameCreated = await frameController.read(req, res);
+      expect((res.status as sinon.SinonStub).calledWith(200)).to.be.true;
+      expect((res.json as sinon.SinonStub).calledWith(frameMocksArray)).to.be.true;
+		});
+	});
 });

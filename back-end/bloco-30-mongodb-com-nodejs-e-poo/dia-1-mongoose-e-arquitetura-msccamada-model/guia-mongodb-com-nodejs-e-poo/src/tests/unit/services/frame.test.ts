@@ -4,7 +4,7 @@ import { ZodError } from 'zod';
 import { ErrorTypes } from '../../../errors/catalog';
 import FrameModel from '../../../models/Frame.model';
 import FrameService from '../../../services/Frame.service';
-import { frameMock, frameMockWithId } from '../../mocks/Frame.mock';
+import { frameMock, frameMocksArray, frameMockWithId } from '../../mocks/Frame.mock';
 
 describe('Frame Service', () => {
 	const frameModel = new FrameModel();
@@ -17,6 +17,8 @@ describe('Frame Service', () => {
 			.onCall(0).resolves(frameMockWithId) 
       // já na próxima chamada ele vai mudar seu retorno, isso pode ser feito várias vezes
 			.onCall(1).resolves(null); 
+		sinon.stub(frameModel, "read")
+			.onCall(0).resolves(frameMocksArray).onCall(1).resolves(null)
 	})
 	after(() => {
 		sinon.restore()
@@ -49,6 +51,22 @@ describe('Frame Service', () => {
 			try {
         // a mesma chamada que o teste acima aqui vai gerar o erro por causa do nosso sinon.stub(...).onCall(1)
 				await frameService.readOne(frameMockWithId._id);
+			} catch (error:any) {
+				expect(error.message).to.be.deep.equal(ErrorTypes.EntityNotFound);
+			}
+		});
+	});
+	describe('Read all Frames', () => {
+		it('Success', async () => {
+			const frameCreated = await frameService.read();
+
+			expect(frameCreated).to.be.deep.equal(frameMocksArray);
+		});
+
+		it('Failure', async () => {
+			try {
+        // a mesma chamada que o teste acima aqui vai gerar o erro por causa do nosso sinon.stub(...).onCall(1)
+				await frameService.read();
 			} catch (error:any) {
 				expect(error.message).to.be.deep.equal(ErrorTypes.EntityNotFound);
 			}
