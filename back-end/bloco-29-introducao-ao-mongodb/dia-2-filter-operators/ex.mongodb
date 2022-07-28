@@ -1,0 +1,71 @@
+use("class");
+// ex01
+// db.superheroes.find({});
+
+// ex02
+// db.superheroes.find({"aspects.height": {$lt: 180}});
+
+// ex03
+// db.superheroes.find({"aspects.height": {$lt: 180}}).count();
+
+// ex04
+// db.superheroes.find({"aspects.height": {$lte: 180}}).count();
+
+// ex05
+// db.superheroes.find({"aspects.height": {$gte: 200}});
+
+// ex06
+// db.superheroes.find({"aspects.height": {$gte: 200}}).count();
+
+// ex07
+// db.superheroes.find({"aspects.eyeColor": "green"});
+
+// ex08
+// db.superheroes.find({"aspects.eyeColor": "blue"}).count();
+
+// ex09
+// db.superheroes.find({"aspects.hairColor": {$in: ["black", "No hair"]}});
+
+// ex10
+// db.superheroes.find({"aspects.hairColor": {$in: ["black", "No hair"]}}).count();
+
+// ex11
+// db.superheroes.find({"aspects.hairColor": {$not: {$in: ["black", "No hair"]}}}).count();
+
+// ex12
+// db.superheroes.find({"aspects.height": {$not: {$gt: 180}}});
+
+// ex13
+// db.superheroes.find({$nor: [
+//   {race: "Human"},
+//   { "aspects.height": { $gt: 180 } }
+// ]});
+
+// ex14
+// db.superheroes.find({$and: [
+//   { "aspects.height": { $in: [180, 200] } },
+//   {publisher: "Marvel Comics"}
+// ]});
+
+// ex15
+// db.superheroes.find({$and: [
+//   { "aspects.weight": { $gte: 80, $lte: 100} },
+//   {race: {$in: ["Mutant", "Human"]}},
+//   {publisher: {$ne: "DC Comics"}}
+// ]});
+
+// ex16
+// db.superheroes.find({race: {$exists: false}});
+
+// ex17
+// db.superheroes.find({"aspects.hairColor": {$exists: true}}).count();
+
+// ex18
+// db.superheroes.deleteOne(
+//     { publisher: "Sony Pictures" }
+// );
+
+// ex19
+db.superheroes.deleteMany(
+    { publisher: "George Lucas" }
+);
