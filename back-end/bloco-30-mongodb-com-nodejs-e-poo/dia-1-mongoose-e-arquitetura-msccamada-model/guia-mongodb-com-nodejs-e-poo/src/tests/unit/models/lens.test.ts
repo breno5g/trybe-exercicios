@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
 import LensModel from '../../../models/Lens.model';
-import { Model, isValidObjectId } from 'mongoose';
+import { Model,  ObjectId } from 'mongoose';
 import { lensMock, lensMocksArray, lensMockWithId } from '../../mocks/Lens.mock';
 
 describe('Lens Model', () => {
@@ -47,14 +47,12 @@ describe('Lens Model', () => {
 	});
 
 	describe('delete lens by id', () => {
-		// before(() => {
-		// 	const mock = sinon.mock(isValidObjectId);
-		// 	mock.expects('').resolves(false)
-		// });
-
 		it('successfully delete', async () => {
-			// Esse teste quebra pois não mockei a função do mongoose
-			const lensFound = await lensModel.destroy('62cf1fc6498565d94eba52cd');
+			// Usei essa derivação de um gist para gerar um id valido para o mongo
+			// Mas preciso estudar sobre como ele é gerado para mockar melhor
+			// https://gist.github.com/solenoid/1372386
+			// https://observablehq.com/@hugodf/mongodb-objectid-generator
+			const lensFound = await lensModel.destroy("62e297d6f22dbbdca26171aa");
 			expect(lensFound).to.be.deep.equal(lensMock)
 		});
 
