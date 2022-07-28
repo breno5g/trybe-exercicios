@@ -1,0 +1,54 @@
+// use test;
+
+// // lt = lower than
+// db.books.find({ pageCount: { $lt: 500 } });
+
+// // lte = lower than equal
+// db.books.find({ pageCount: { $lte: 500 } });
+
+// // gt = greater than
+// db.books.find({ pageCount: { $gt: 20 } })
+
+// // gte = greate than equal
+// db.books.find({ pageCount: { $gte: 20 } })
+
+// // eq = equal
+// db.books.find({ pageCount: { $eq: 20 } })
+
+// // ne = not equal
+// db.books.find({ pageCount: { $ne: 20 } })
+
+// // in = busca por um dos valores do array
+// db.books.find({ pageCount: { $in: [ 5, 15 ] } })
+
+// // nin = not in
+// db.books.find( { pageCount: { $nin: [ 5, 15 ] } } )
+
+// // exists = se o valor existe
+// db.books.find({ pageCount: { $exists: true } })
+
+// // not = nega
+// db.books.find({ pageCount: { $not: { $gt: 1.99 } } })
+
+// // or = ou
+// db.inventory.find({ $or: [{ qty: { $lt: 20 } }, { price: 10 }] })
+
+// // nor = "ou" do mal
+// db.inventory.find({ $nor: [{ price: 1.99 }, { sale: true }] })
+
+// // and = e
+// // { $and: [{ <expressão1> }, { <expressão2> } , ... , { <expressãoN> }] }
+
+// db.inventory.find({
+//     $and: [
+//         { price: { $ne: 1.99 } },
+//         { price: { $exists: true } }
+//     ]
+// })
+
+// db.colecao.find().sort({ "campo": "1 ou -1"})
+// //  Quando existe a necessidade de ordenar os documentos por algum atributo, o método sort() se mostra muito útil. Usando um valor positivo (1) como valor do atributo, os documentos da consultas são ordenados de forma crescente ou alfabética (também ordena por campos com strings). Em complemento, usando um valor negativo (-1), os documentos de saída estarão em ordem decrescente ou contra alfabética.
+
+// db.inventory.deleteOne({ status: "D" })
+
+// db.inventory.deleteMany({ status : "A" })
